@@ -443,34 +443,50 @@ body {
   }
 }
 
-
-/* Section: Kontak Kami */
-.kontak {
-  background-color: #000;
-  color: #fff;
-  padding: 80px 20px;
-  text-align: center;
+.kontak-footer {
+  background-color: #000018;
+  color: #ffffff;
+  padding: 60px 20px;
 }
 
 .kontak-container {
-  max-width: 800px;
+  max-width: 1200px;
   margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 40px;
 }
 
-.kontak h2 {
+.kontak-deskripsi {
+  flex: 1;
+  min-width: 250px;
+}
+
+.kontak-footer h2 {
   font-size: 36px;
   margin-bottom: 20px;
   color: #00ff73;
 }
 
-.kontak p {
-  font-size: 18px;
+.kontak-footer p {
+  font-size: 16px;
   line-height: 1.6;
-  margin-bottom: 10px;
+  margin: 0;
+}
+
+.kontak-info {
+  flex: 1;
+  min-width: 250px;
+}
+
+.kontak-info p {
+  margin: 8px 0;
 }
 
 .kontak-info a {
-  color: #00ff73;
+  color: #a5d6a7;
   text-decoration: none;
 }
 
@@ -478,25 +494,18 @@ body {
   text-decoration: underline;
 }
 
-/* Footer */
-.footer {
-  background-color: #111;
-  color: #fff;
-  text-align: center;
-  padding: 30px 20px;
+.footer-bottom {
+  border-top: 1px solid #333;
+  margin-top: 40px;
+  padding-top: 20px;
   font-size: 14px;
-  border-top: 1px solid #00ff73;
+  color: #cccccc;
+  text-align: center;
 }
 
-.footer a {
-  color: #00ff73;
-  text-decoration: none;
-  font-weight: bold;
-}
 
-.footer a:hover {
-  text-decoration: underline;
-}
+
+
 
 
 

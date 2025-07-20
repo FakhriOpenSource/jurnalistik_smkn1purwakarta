@@ -58,7 +58,7 @@
 <!-- 🏠 Beranda -->
 <section id="beranda">
   <div class="hero">
-    <img src="/assets/images/logo_jurnalistik.png" alt="Logo Jurnalistik" width="120" />
+    <img src="/image/logo_jurnalistik.png" alt="Logo Jurnalistik" width="120" />
     <h2>Jurnalis Muda, Suara Masa Depan</h2>
   <button onclick="window.location.href='#karya'">Baca Karya Kami</button>
   <button onclick="window.open('https://chat.whatsapp.com/K2Qw0i46n47Et977tKSz0O', '_blank')">Gabung Sekarang</button>
@@ -71,7 +71,7 @@
     <h2>Tentang Kami</h2>
     <div class="content">
       <div class="gambar">
-        <img src="/assets/images/tentang_kami.jpg" alt="Tentang Kami" />
+        <img src="/image/tentang_kami.jpg" alt="Tentang Kami" />
       </div>
       <div class="deskripsi">
         <p>Kami adalah tim jurnalistik sekolah yang belajar dan berkarya seperti wartawan. Kami menulis berita, artikel, dan laporan, serta membuat konten visual seperti poster dan buletin digital,
@@ -112,22 +112,22 @@
   <h2>Pengurus Inti</h2>
   <div class="pengurus-grid">
     <div class="pengurus-item">
-      <img src="/assets/images/wajah_miss.png" alt="Ketua Jurnalistik">
+      <img src="/image/wajah_miss_ika.jpeg" alt="Ketua Jurnalistik">
       <h3>Ibu Ika Mustika</h3>
       <p>Pembina Eskul</p>
     </div>
     <div class="pengurus-item">
-      <img src="/assets/images/wajah_fahri.png" alt="Wakil Ketua">
+      <img src="/image/wajah_fahri.png" alt="Wakil Ketua">
       <h3>Muhammad Fakhri</h3>
       <p>Ketua</p>
     </div>
     <div class="pengurus-item">
-      <img src="/assets/images/anymous_man.jpg" alt="Sekretaris">
+      <img src="/image/anymous_woman.jpg" alt="Sekretaris">
       <h3>Belum ada</h3>
       <p>Wakil Ketua</p>
     </div>
     <div class="pengurus-item">
-      <img src="/assets/images/anymous_woman.jpg" alt="Bendahara">
+      <img src="/image/anymous_man.jpg" alt="Bendahara">
       <h3>Belum ada</h3>
       <p>Bendahara</p>
     </div>
@@ -141,25 +141,25 @@
 
       <!-- Card 1 -->
       <div class="divisi-card" onclick="showModal('penulis')">
-        <img src="/assets/images/divisi_penulis.jpg" alt="Divisi Penulis">
+        <img src="/image/divisi_penulis.jpg" alt="Divisi Penulis">
         <h3>Divisi Penulis</h3>
       </div>
 
       <!-- Card 2 -->
       <div class="divisi-card" onclick="showModal('desain')">
-        <img src="/assets/images/divisi_desing.jpg" alt="Desain & Sosmed">
+        <img src="/image/divisi_editing.jpg" alt="Desain & Sosmed">
         <h3>Desain & Sosmed</h3>
       </div>
 
       <!-- Card 3 -->
       <div class="divisi-card" onclick="showModal('liputan')">
-        <img src="/assets/images/divisi_liputan.jpg" alt="Divisi Liputan">
+        <img src="/image/divisi_liputan.jpg" alt="Divisi Liputan">
         <h3>Divisi Liputan</h3>
       </div>
 
       <!-- Card 4 -->
       <div class="divisi-card" onclick="showModal('editing')">
-        <img src="/assets/images/divisi_editing.jpg" alt="Divisi Editing">
+        <img src="/image/divisi_editing.jpg" alt="Divisi Editing">
         <h3>Divisi Editing</h3>
       </div>
     </div>
@@ -174,26 +174,26 @@
     </div>
   </div>
 
-<!-- 📞 Kontak -->
-<section id="kontak" class="kontak">
+<!-- 📞 Footer -->
+<div class="kontak-footer">
   <div class="kontak-container">
-    <h2>Kontak Kami</h2>
-    <p>Hubungi kami jika kamu ingin tahu lebih lanjut tentang Ekskul Jurnalistik SMKN 1 Purwakarta.</p>
+    <div class="kontak-deskripsi">
+      <h2>Hubungi Kami</h2>
+      <p>Kami adalah tim jurnalistik yang siap menyampaikan informasi secara akurat dan inspiratif.</p>
+    </div>
     <div class="kontak-info">
-      <p><strong>Email:</strong> jurnalistik@smkn1purwakarta.sch.id</p>
-      <p><strong>Instagram:</strong> <a href="https://instagram.com/jurnalistik.nepoer" target="_blank">@jurnalistiksmkn1</a></p>
-      <p><strong>Alamat:</strong> Jl. Industri No.KM 4, Babakancikao, Kec. Babakancikao, Kabupaten Purwakarta, Jawa Barat 41151</p>
+      <p>Email: <a href="mailto:info@jurnalistikschool.com">info@jurnalistikschool.com</a></p>
+      <p>Instagram: <a href="https://instagram.com/namakamu">@namakamu</a></p>
+      <p>WhatsApp: <a href="https://wa.me/6281234567890">+62 812-3456-7890</a></p>
     </div>
   </div>
-</section>
-
-<!-- 🔚 Footer -->
-<footer class="footer">
-  <div class="footer-container">
-    <p>&copy; JURNALISTIK SMKN 1 PURWAKARTA. All rights reserved.</p>
-    <p>Developer by : Muhammad Fakhri</p>
+  <div class="footer-bottom">
+    &copy; 2025 Jurnalistik SMKN 1 Purwakarta. All Rights Reserved.
   </div>
-</footer>
+  
+</div>
+
+
 
 <!-- script lain seperti JavaScript kamu -->
 <script src="script.js"></script>
@@ -215,7 +215,7 @@
       setTimeout(() => {
         loadingScreen.style.display = "none";
       }, 500); // menunggu efek fade
-    }, 7000); // tampil selama 7 detik
+    }, 2000); // tampil selama 7 detik
   });
 
   <!-- 🧠 Divisi animasi -->
