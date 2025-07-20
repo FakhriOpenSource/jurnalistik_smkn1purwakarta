@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jurnalistik SMKN 1 Purwakarta</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <style>
+    /* Preloader Styles */
+    #preloader {
+      position: fixed;
+      width: 100vw;
+      height: 100vh;
+      background-color: #000; /* Bisa kamu ubah */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      transition: opacity 0.5s ease;
+    }
+
+    #preloader img {
+      width: 180px; /* Atur ukuran loading GIF */
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+
+<!-- 🔄 Preloader GIF -->
+<div id="preloader">
+  <img src="/animation/loadning_page.gif" alt="Loading..." />
+</div>
+
+<!-- 🧭 Navigasi -->
+<header>
+  <nav class="navbar">
+    <div class="nav-left">
+      <div class="logo">Jurnalistik Nepoer</div>
+      <div class="hamburger" id="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    </div>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#beranda">Beranda</a></li>
+      <li><a href="#tentang">Tentang Kami</a></li>
+      <li><a href="#karya-konten">Karya</a></li>
+      <li><a href="#pengurus">Pengurus</a></li>
+      <li><a href="#divisi">Divisi</a></li>
+      <li><a href="#kontak">Kontak</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- 🏠 Beranda -->
+<section id="beranda">
+  <div class="hero">
+    <img src="/assets/images/logo_jurnalistik.png" alt="Logo Jurnalistik" width="120" />
+    <h2>Jurnalis Muda, Suara Masa Depan</h2>
+  <button onclick="window.location.href='#karya'">Baca Karya Kami</button>
+  <button onclick="window.open('https://chat.whatsapp.com/K2Qw0i46n47Et977tKSz0O', '_blank')">Gabung Sekarang</button>
+  </div>
+</section>
+
+<!-- 🧾 Tentang Kami -->
+<section class="tentang-kami" id="tentang">
+  <div class="container">
+    <h2>Tentang Kami</h2>
+    <div class="content">
+      <div class="gambar">
+        <img src="/assets/images/tentang_kami.jpg" alt="Tentang Kami" />
+      </div>
+      <div class="deskripsi">
+        <p>Kami adalah tim jurnalistik sekolah yang belajar dan berkarya seperti wartawan. Kami menulis berita, artikel, dan laporan, serta membuat konten visual seperti poster dan buletin digital,
+          Kami percaya bahwa informasi yang jelas dan menarik bisa membawa pengaruh baik. Karena itu, kami terus belajar menjadi jurnalis muda yang bertanggung jawab dan kreatif, seperti di dunia media dan berita.
+        </p>
+        <p>Kami adalah calon jurnalis muda yang siap menyuarakan berita dan cerita dari sekolah. Lewat tulisan dan desain, kami belajar seperti wartawan di media profesional.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 📝 Karya & Konten -->
+<section id="karya-konten" class="karya-konten">
+  <div class="container">
+    <h2>Karya dan Konten</h2>
+    <div class="konten-grid">
+      <div class="konten-item">
+        <img src="images/konten1.jpg" alt="Karya 1">
+        <h3>Puisi Literasi</h3>
+        <p>Karya sastra yang menggugah semangat generasi muda.</p>
+      </div>
+      <div class="konten-item">
+        <img src="images/konten2.jpg" alt="Karya 2">
+        <h3>Buletin Sekolah</h3>
+        <p>Informasi mingguan seputar kegiatan dan opini siswa.</p>
+      </div>
+      <div class="konten-item">
+        <img src="images/konten3.jpg" alt="Karya 3">
+        <h3>Konten Digital</h3>
+        <p>Desain grafis, video reportase, hingga podcast siswa.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 👥 Pengurus -->
+<section id="pengurus" class="pengurus">
+  <h2>Pengurus Inti</h2>
+  <div class="pengurus-grid">
+    <div class="pengurus-item">
+      <img src="/assets/images/wajah_miss.png" alt="Ketua Jurnalistik">
+      <h3>Ibu Ika Mustika</h3>
+      <p>Pembina Eskul</p>
+    </div>
+    <div class="pengurus-item">
+      <img src="/assets/images/wajah_fahri.png" alt="Wakil Ketua">
+      <h3>Muhammad Fakhri</h3>
+      <p>Ketua</p>
+    </div>
+    <div class="pengurus-item">
+      <img src="/assets/images/anymous_man.jpg" alt="Sekretaris">
+      <h3>Belum ada</h3>
+      <p>Wakil Ketua</p>
+    </div>
+    <div class="pengurus-item">
+      <img src="/assets/images/anymous_woman.jpg" alt="Bendahara">
+      <h3>Belum ada</h3>
+      <p>Bendahara</p>
+    </div>
+  </div>
+</section>
+
+  <!-- 🔰 Bagian Divisi -->
+  <section class="divisi-section">
+    <h2>Divisi Jurnalistik</h2>
+    <div class="divisi-container">
+
+      <!-- Card 1 -->
+      <div class="divisi-card" onclick="showModal('penulis')">
+        <img src="/assets/images/divisi_penulis.jpg" alt="Divisi Penulis">
+        <h3>Divisi Penulis</h3>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="divisi-card" onclick="showModal('desain')">
+        <img src="/assets/images/divisi_desing.jpg" alt="Desain & Sosmed">
+        <h3>Desain & Sosmed</h3>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="divisi-card" onclick="showModal('liputan')">
+        <img src="/assets/images/divisi_liputan.jpg" alt="Divisi Liputan">
+        <h3>Divisi Liputan</h3>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="divisi-card" onclick="showModal('editing')">
+        <img src="/assets/images/divisi_editing.jpg" alt="Divisi Editing">
+        <h3>Divisi Editing</h3>
+      </div>
+    </div>
+  </section>
+
+  <!-- 🧾 Modal Penjelasan Divisi -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h3 id="modal-title"></h3>
+      <p id="modal-desc"></p>
+    </div>
+  </div>
+
+<!-- 📞 Kontak -->
+<section id="kontak" class="kontak">
+  <div class="kontak-container">
+    <h2>Kontak Kami</h2>
+    <p>Hubungi kami jika kamu ingin tahu lebih lanjut tentang Ekskul Jurnalistik SMKN 1 Purwakarta.</p>
+    <div class="kontak-info">
+      <p><strong>Email:</strong> jurnalistik@smkn1purwakarta.sch.id</p>
+      <p><strong>Instagram:</strong> <a href="https://instagram.com/jurnalistik.nepoer" target="_blank">@jurnalistiksmkn1</a></p>
+      <p><strong>Alamat:</strong> Jl. Industri No.KM 4, Babakancikao, Kec. Babakancikao, Kabupaten Purwakarta, Jawa Barat 41151</p>
+    </div>
+  </div>
+</section>
+
+<!-- 🔚 Footer -->
+<footer class="footer">
+  <div class="footer-container">
+    <p>&copy; JURNALISTIK SMKN 1 PURWAKARTA. All rights reserved.</p>
+    <p>Developer by : Muhammad Fakhri</p>
+  </div>
+</footer>
+
+<!-- script lain seperti JavaScript kamu -->
+<script src="script.js"></script>
+
+<!-- AOS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+
+  AOS.init({
+    duration: 1000,
+    once: true,
+  });
+
+  // Preloader delay + fade out
+  window.addEventListener("load", function () {
+    setTimeout(function () {
+      const loadingScreen = document.getElementById("preloader");
+      loadingScreen.style.opacity = "0";
+      setTimeout(() => {
+        loadingScreen.style.display = "none";
+      }, 500); // menunggu efek fade
+    }, 7000); // tampil selama 7 detik
+  });
+
+  <!-- 🧠 Divisi animasi -->
+    const descriptions = {
+      penulis: {
+        title: "✍️Divisi Penulis",
+        desc: "Divisi Penuli  ini bertugas membuat artikel, berita, puisi, dan naskah konten jurnalistik lainnya yang akan dipublikasikan baik di media internal maupun eksternal sekolah."
+      },
+      desain: {
+        title: "👩‍🎨Divisi Desain & Sosmed",
+        desc: "Mengatur konten visual seperti feed Instagram, poster, dan buletin digital. Mereka bertanggung jawab atas tampilan media sosial."
+      },
+      liputan: {
+        title: "🧑‍💼Divisi Liputan",
+        desc: "Bertugas meliput kegiatan sekolah sebagai reporter, fotografer, dan videografer. Mereka menangkap momen penting untuk dokumentasi."
+      },
+      editing: {
+        title: "🧑‍💻Divisi Editing",
+        desc: "Divisi ini mengedit konten seperti video, foto, dan artikel sebelum dipublikasikan untuk memastikan kualitas dan konsistensi."
+      }
+    };
+
+    function showModal(divisi) {
+      document.getElementById('modal-title').innerText = descriptions[divisi].title;
+      document.getElementById('modal-desc').innerText = descriptions[divisi].desc;
+      document.getElementById('modal').style.display = 'block';
+    }
+
+    function closeModal() {
+      document.getElementById('modal').style.display = 'none';
+    }
+
+    // Tutup modal jika klik luar
+    window.onclick = function(event) {
+      const modal = document.getElementById('modal');
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    };
+
+</script>
+
+</body>
+</html>
+
