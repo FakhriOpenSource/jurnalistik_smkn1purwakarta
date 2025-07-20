@@ -12,7 +12,7 @@
       position: fixed;
       width: 100vw;
       height: 100vh;
-      background-color: #000; /* Bisa kamu ubah */
+      background-color: #000;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -21,7 +21,7 @@
     }
 
     #preloader img {
-      width: 180px; /* Atur ukuran loading GIF */
+      width: 180px;
       height: auto;
     }
   </style>
@@ -30,7 +30,7 @@
 
 <!-- 🔄 Preloader GIF -->
 <div id="preloader">
-  <img src="animation/loadning_page.gif" alt="Loading..." />
+  <img src="image/loadning_page.gif" alt="Loading..." />
 </div>
 
 <!-- 🧭 Navigasi -->
@@ -60,8 +60,8 @@
   <div class="hero">
     <img src="image/logo_jurnalistik.png" alt="Logo Jurnalistik" width="120" />
     <h2>Jurnalis Muda, Suara Masa Depan</h2>
-  <button onclick="window.location.href='#karya'">Baca Karya Kami</button>
-  <button onclick="window.open('https://chat.whatsapp.com/K2Qw0i46n47Et977tKSz0O', '_blank')">Gabung Sekarang</button>
+    <button onclick="window.location.href='#karya-konten'">Baca Karya Kami</button>
+    <button onclick="window.open('https://chat.whatsapp.com/K2Qw0i46n47Et977tKSz0O', '_blank')">Gabung Sekarang</button>
   </div>
 </section>
 
@@ -74,10 +74,8 @@
         <img src="image/tentang_kami.jpg" alt="Tentang Kami" />
       </div>
       <div class="deskripsi">
-        <p>Kami adalah tim jurnalistik sekolah yang belajar dan berkarya seperti wartawan. Kami menulis berita, artikel, dan laporan, serta membuat konten visual seperti poster dan buletin digital,
-          Kami percaya bahwa informasi yang jelas dan menarik bisa membawa pengaruh baik. Karena itu, kami terus belajar menjadi jurnalis muda yang bertanggung jawab dan kreatif, seperti di dunia media dan berita.
-        </p>
-        <p>Kami adalah calon jurnalis muda yang siap menyuarakan berita dan cerita dari sekolah. Lewat tulisan dan desain, kami belajar seperti wartawan di media profesional.</p>
+        <p>Kami adalah tim jurnalistik sekolah yang belajar dan berkarya seperti wartawan. Kami menulis berita, artikel, dan laporan, serta membuat konten visual seperti poster dan buletin digital.</p>
+        <p>Kami percaya bahwa informasi yang jelas dan menarik bisa membawa pengaruh baik. Karena itu, kami terus belajar menjadi jurnalis muda yang bertanggung jawab dan kreatif, seperti di dunia media dan berita.</p>
       </div>
     </div>
   </div>
@@ -89,17 +87,17 @@
     <h2>Karya dan Konten</h2>
     <div class="konten-grid">
       <div class="konten-item">
-        <img src="images/konten1.jpg" alt="Karya 1">
+        <img src="image/konten1.jpg" alt="Karya 1">
         <h3>Puisi Literasi</h3>
         <p>Karya sastra yang menggugah semangat generasi muda.</p>
       </div>
       <div class="konten-item">
-        <img src="images/konten2.jpg" alt="Karya 2">
+        <img src="image/konten2.jpg" alt="Karya 2">
         <h3>Buletin Sekolah</h3>
         <p>Informasi mingguan seputar kegiatan dan opini siswa.</p>
       </div>
       <div class="konten-item">
-        <img src="images/konten3.jpg" alt="Karya 3">
+        <img src="image/konten3.jpg" alt="Karya 3">
         <h3>Konten Digital</h3>
         <p>Desain grafis, video reportase, hingga podcast siswa.</p>
       </div>
@@ -134,48 +132,40 @@
   </div>
 </section>
 
-  <!-- 🔰 Bagian Divisi -->
-  <section class="divisi-section">
-    <h2>Divisi Jurnalistik</h2>
-    <div class="divisi-container">
-
-      <!-- Card 1 -->
-      <div class="divisi-card" onclick="showModal('penulis')">
-        <img src="image/divisi_penulis.jpg" alt="Divisi Penulis">
-        <h3>Divisi Penulis</h3>
-      </div>
-
-      <!-- Card 2 -->
-      <div class="divisi-card" onclick="showModal('desain')">
-        <img src="image/divisi_editing.jpg" alt="Desain & Sosmed">
-        <h3>Desain & Sosmed</h3>
-      </div>
-
-      <!-- Card 3 -->
-      <div class="divisi-card" onclick="showModal('liputan')">
-        <img src="image/divisi_liputan.jpg" alt="Divisi Liputan">
-        <h3>Divisi Liputan</h3>
-      </div>
-
-      <!-- Card 4 -->
-      <div class="divisi-card" onclick="showModal('editing')">
-        <img src="image/divisi_editing.jpg" alt="Divisi Editing">
-        <h3>Divisi Editing</h3>
-      </div>
+<!-- 🔰 Divisi -->
+<section class="divisi-section" id="divisi">
+  <h2>Divisi Jurnalistik</h2>
+  <div class="divisi-container">
+    <div class="divisi-card" onclick="showModal('penulis')">
+      <img src="image/divisi_penulis.jpg" alt="Divisi Penulis">
+      <h3>Divisi Penulis</h3>
     </div>
-  </section>
-
-  <!-- 🧾 Modal Penjelasan Divisi -->
-  <div id="modal" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal()">&times;</span>
-      <h3 id="modal-title"></h3>
-      <p id="modal-desc"></p>
+    <div class="divisi-card" onclick="showModal('desain')">
+      <img src="image/divisi_editing.jpg" alt="Desain & Sosmed">
+      <h3>Desain & Sosmed</h3>
+    </div>
+    <div class="divisi-card" onclick="showModal('liputan')">
+      <img src="image/divisi_liputan.jpg" alt="Divisi Liputan">
+      <h3>Divisi Liputan</h3>
+    </div>
+    <div class="divisi-card" onclick="showModal('editing')">
+      <img src="image/divisi_editing.jpg" alt="Divisi Editing">
+      <h3>Divisi Editing</h3>
     </div>
   </div>
+</section>
+
+<!-- 🧾 Modal -->
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <h3 id="modal-title"></h3>
+    <p id="modal-desc"></p>
+  </div>
+</div>
 
 <!-- 📞 Footer -->
-<div class="kontak-footer">
+<div class="kontak-footer" id="kontak">
   <div class="kontak-container">
     <div class="kontak-deskripsi">
       <h2>Hubungi Kami</h2>
@@ -190,74 +180,60 @@
   <div class="footer-bottom">
     &copy; 2025 Jurnalistik SMKN 1 Purwakarta. All Rights Reserved.
   </div>
-  
 </div>
 
-
-
-<!-- script lain seperti JavaScript kamu -->
+<!-- script -->
 <script src="script.js"></script>
-
-<!-- AOS -->
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
+  AOS.init({ duration: 1000, once: true });
 
-  AOS.init({
-    duration: 1000,
-    once: true,
-  });
-
-  // Preloader delay + fade out
   window.addEventListener("load", function () {
     setTimeout(function () {
       const loadingScreen = document.getElementById("preloader");
       loadingScreen.style.opacity = "0";
       setTimeout(() => {
         loadingScreen.style.display = "none";
-      }, 500); // menunggu efek fade
-    }, 2000); // tampil selama 7 detik
+      }, 500);
+    }, 2000);
   });
 
-  <!-- 🧠 Divisi animasi -->
-    const descriptions = {
-      penulis: {
-        title: "✍️Divisi Penulis",
-        desc: "Divisi Penuli  ini bertugas membuat artikel, berita, puisi, dan naskah konten jurnalistik lainnya yang akan dipublikasikan baik di media internal maupun eksternal sekolah."
-      },
-      desain: {
-        title: "👩‍🎨Divisi Desain & Sosmed",
-        desc: "Mengatur konten visual seperti feed Instagram, poster, dan buletin digital. Mereka bertanggung jawab atas tampilan media sosial."
-      },
-      liputan: {
-        title: "🧑‍💼Divisi Liputan",
-        desc: "Bertugas meliput kegiatan sekolah sebagai reporter, fotografer, dan videografer. Mereka menangkap momen penting untuk dokumentasi."
-      },
-      editing: {
-        title: "🧑‍💻Divisi Editing",
-        desc: "Divisi ini mengedit konten seperti video, foto, dan artikel sebelum dipublikasikan untuk memastikan kualitas dan konsistensi."
-      }
-    };
-
-    function showModal(divisi) {
-      document.getElementById('modal-title').innerText = descriptions[divisi].title;
-      document.getElementById('modal-desc').innerText = descriptions[divisi].desc;
-      document.getElementById('modal').style.display = 'block';
+  const descriptions = {
+    penulis: {
+      title: "✍️Divisi Penulis",
+      desc: "Divisi ini membuat artikel, berita, puisi, dan naskah konten jurnalistik lainnya."
+    },
+    desain: {
+      title: "👩‍🎨Divisi Desain & Sosmed",
+      desc: "Mengatur konten visual seperti feed Instagram, poster, dan buletin digital."
+    },
+    liputan: {
+      title: "🧑‍💼Divisi Liputan",
+      desc: "Meliput kegiatan sekolah sebagai reporter, fotografer, dan videografer."
+    },
+    editing: {
+      title: "🧑‍💻Divisi Editing",
+      desc: "Mengedit konten sebelum dipublikasikan agar berkualitas dan konsisten."
     }
+  };
 
-    function closeModal() {
-      document.getElementById('modal').style.display = 'none';
+  function showModal(divisi) {
+    document.getElementById('modal-title').innerText = descriptions[divisi].title;
+    document.getElementById('modal-desc').innerText = descriptions[divisi].desc;
+    document.getElementById('modal').style.display = 'block';
+  }
+
+  function closeModal() {
+    document.getElementById('modal').style.display = 'none';
+  }
+
+  window.onclick = function(event) {
+    const modal = document.getElementById('modal');
+    if (event.target == modal) {
+      modal.style.display = "none";
     }
-
-    // Tutup modal jika klik luar
-    window.onclick = function(event) {
-      const modal = document.getElementById('modal');
-      if (event.target == modal) {
-        modal.style.display = "none";
-      }
-    };
-
+  };
 </script>
 
 </body>
 </html>
-
