@@ -87,25 +87,47 @@
 <section id="karya-konten" class="karya-konten">
   <div class="container">
     <h2>Karya dan Konten</h2>
+
+    <!-- Tombol filter -->
+    <div class="filter-buttons">
+      <button class="filter-btn active" data-category="all">All</button>
+      <button class="filter-btn" data-category="puisi">Puisi</button>
+      <button class="filter-btn" data-category="artikel">Artikel</button>
+      <button class="filter-btn" data-category="konten">Konten Digital</button>
+    </div>
+
+    <!-- Konten grid -->
     <div class="konten-grid">
-      <div class="konten-item">
-        <img src="image/puisi.jpg" alt="Karya 1">
-        <h3>Puisi Literasi</h3>
-        <p>Karya sastra yang menggugah semangat generasi muda.</p>
+      <div class="konten-item puisi", data-category="puisi">
+        <div class="card-glass">
+          <img src="image/puisi.jpg" alt="Puisi Literasi">
+          <h3>Puisi Literasi</h3>
+          <p>Karya sastra yang menggugah semangat generasi muda.</p>
+          <a href="file/puisi.pdf" download class="btn-unduh">👁️Liha</a>
+        </div>
       </div>
-      <div class="konten-item">
-        <img src="image/buletin_sekolah.jpg" alt="Karya 2">
-        <h3>Buletin Sekolah</h3>
-        <p>Informasi mingguan seputar kegiatan dan opini siswa.</p>
+
+      <div class="konten-item artikel", data-category="artikel">
+        <div class="card-glass">
+          <img src="image/buletin_sekolah.jpg" alt="Buletin Sekolah">
+          <h3>Buletin Sekolah</h3>
+          <p>Informasi mingguan seputar kegiatan dan opini siswa.</p>
+          <a href="file/buletin.pdf" download class="btn-unduh">👁️Liha</a>
+        </div>
       </div>
-      <div class="konten-item">
-        <img src="image/kontent_digital.jpg" alt="Karya 3">
-        <h3>Konten Digital</h3>
-        <p>Desain grafis, video reportase, hingga podcast siswa.</p>
+
+      <div class="konten-item poster", data-category="konten">
+        <div class="card-glass">
+          <img src="image/kontent_digital.jpg" alt="Konten Digital">
+          <h3>Konten Digital</h3>
+          <p>Desain grafis, video reportase, hingga podcast siswa.</p>
+          <a href="file/konten.jpg" download class="btn-unduh">👁️Lihat</a>
+        </div>
       </div>
     </div>
   </div>
 </section>
+
 
 <!-- 👥 Pengurus -->
 <section id="pengurus" class="pengurus">
@@ -248,7 +270,7 @@
       document.getElementById('modal').style.display = 'none';
     }
 
-    // Tutup modal jika klik luar
+// Tutup modal jika klik luar
     window.onclick = function(event) {
       const modal = document.getElementById('modal');
       if (event.target == modal) {
@@ -256,6 +278,37 @@
       }
     };
 
+    const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+      }
+    });
+  });
+
+  document.querySelectorAll(".fade-in").forEach((el) => observer.observe(el));
+
+
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const kontenItems = document.querySelectorAll('.konten-item');
+
+  filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      // Hapus kelas active dari semua tombol
+      filterButtons.forEach(btn => btn.classList.remove('active'));
+      button.classList.add('active');
+
+      const category = button.getAttribute('data-category');
+
+      kontenItems.forEach(item => {
+        if (category === 'all' || item.getAttribute('data-category') === category) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    });
+  });
 </script>
 
 </body>
