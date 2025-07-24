@@ -60,12 +60,11 @@
   <div class="hero">
     <img src="image/logo_jurnalistik.png" alt="Logo Jurnalistik" width="120" />
     <h2>Jurnalis Muda, Suara Masa Depan</h2>
-  <button onclick="window.location.href='#karya'">Baca Karya Kami</button>
+  <button onclick="window.location.href='#karya-konten'">Baca Karya Kami</button>
   <button onclick="window.open('https://whatsapp.com/channel/0029VanX3iR3GJOzzn3WyN2h', '_blank')">Gabung Sekarang</button>
   </div>
 </section>
 
-  
 <!-- 🧾 Tentang Kami -->
 <section class="tentang-kami" id="tentang">
   <div class="container">
@@ -97,15 +96,18 @@
     </div>
 
     <!-- Konten grid -->
-    <div class="konten-grid">
-      <div class="konten-item puisi", data-category="puisi">
-        <div class="card-glass">
-          <img src="image/puisi.jpg" alt="Puisi Literasi">
-          <h3>Puisi Literasi</h3>
-          <p>Karya sastra yang menggugah semangat generasi muda.</p>
-          <a href="file/puisi.pdf" download class="btn-unduh">👁️Lihat</a>
-        </div>
+   <div class="konten-item">
+  <div class="card-glass">
+    <img src="image/puisi.jpg" alt="Puisi Literasi" />
+    <div class="card-bottom">
+      <div>
+        <h3>Puisi Literasi</h3>
+        <p>Karya sastra yang menggugah semangat generasi muda.</p>
       </div>
+      <a href="file/puisi.pdf" download class="btn-unduh">👁️ Lihat</a>
+    </div>
+  </div>
+</div>
 
       <div class="konten-item artikel", data-category="artikel">
         <div class="card-glass">
@@ -202,11 +204,11 @@
   <div class="kontak-container">
     <div class="kontak-deskripsi">
       <h2>Hubungi Kami</h2>
-      <p>Kami adalah tim jurnalistik yang siap menyampaikan informasi secara akurat dan inspiratif.</p>
+      <p>Kami adalah tim jurnalistik yang siap menyampaikan informasi secara akurat dan inspiratif, bagi kalian yang tertarik dengan dunia media langsung join dan hubungi nomor WA yang sudah tertera.</p>
     </div>
     <div class="kontak-info">
       <p>Email: <a href="mailto:info@jurnalistikschool.com">info@jurnalistikschool.com</a></p>
-      <p>Instagram: <a href="https://instagram.com/namakamu">@jurnalistik.nepoer</a></p>
+      <p>Instagram: <a href="https://instagram.com/namakamu">@jurnalistik.smkn1purwakarta_</a></p>
       <p>WhatsApp: <a href="https://wa.me/6281234567890">+62 819-3143-7013</a></p>
     </div>
   </div>
@@ -238,18 +240,18 @@
       setTimeout(() => {
         loadingScreen.style.display = "none";
       }, 500); // menunggu efek fade
-    }, 4000); // tampil selama 7 detik
+    }, 2000); // tampil selama 7 detik
   });
 
   <!-- 🧠 Divisi animasi -->
     const descriptions = {
       penulis: {
         title: "✍️Divisi Penulis",
-        desc: "Divisi Penuli  ini bertugas membuat artikel, berita, puisi, dan naskah konten jurnalistik lainnya yang akan dipublikasikan baik di media internal maupun eksternal sekolah."
+        desc: "Divisi Penulis ini bertugas membuat artikel, berita, puisi, dan naskah konten jurnalistik lainnya yang akan dipublikasikan baik di media internal maupun eksternal sekolah,  Divisi ini cocok banget buat kamu yang suka menulis, senang menuangkan ide ke dalam kata-kata, dan punya rasa ingin tahu yang tinggi. Nggak harus jago dulu kok, yang penting mau belajar dan konsisten!"
       },
       desain: {
         title: "👩‍🎨Divisi Desain & Sosmed",
-        desc: "Mengatur konten visual seperti feed Instagram, poster, dan buletin digital. Mereka bertanggung jawab atas tampilan media sosial."
+        desc: "Divisi Desain dan Sosial Media adalah tim kreatif di balik tampilan visual dan keaktifan media sosial kami. Di bagian desain, kami membuat berbagai konten visual menarik seperti poster, logo, dan layout majalah yang estetik dan informatif. Sementara itu, divisi sosial media bertugas mengelola akun media sosial, membuat caption yang engaging, serta menjaga interaksi dengan followers. Cocok banget buat kamu yang suka dunia kreatif, desain grafis, dan aktif di dunia digital!"
       },
       liputan: {
         title: "🧑‍💼Divisi Liputan",
@@ -257,7 +259,7 @@
       },
       editing: {
         title: "🧑‍💻Divisi Editing",
-        desc: "Divisi ini mengedit konten seperti video, foto, dan artikel sebelum dipublikasikan untuk memastikan kualitas dan konsistensi."
+        desc: "Divisi ini mengedit konten seperti video, foto, dan artikel sebelum dipublikasikan untuk memastikan kualitas dan konsistensi,  Divisi ini cocok buat kamu yang detail, teliti, dan punya rasa puas saat melihat hasil akhir yang sempurna!"
       }
     };
 
