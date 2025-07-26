@@ -9,21 +9,28 @@
   <style>
     /* Preloader Styles */
     #preloader {
-      position: fixed;
-      width: 100vw;
-      height: 100vh;
-      background-color: #000; /* Bisa kamu ubah */
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 9999;
-      transition: opacity 0.5s ease;
-    }
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease;
+  }
 
-    #preloader img {
-      width: 180px; /* Atur ukuran loading GIF */
-      height: auto;
-    }
+  #preloader.hidden {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  #preloader img {
+    width: 180px;
+    height: auto;
+  }
   </style>
 </head>
 <body>
@@ -37,13 +44,11 @@
 <header>
   <nav class="navbar">
     <div class="nav-left">
-      <div class="logo">Jurnalistik Nepoer</div>
-      <div class="hamburger" id="hamburger">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-      </div>
+      <div class="logo">JURNALISTIK NEPOER</div>
+       <div class="hamburger" onclick="toggleMenu()">☰</div>
     </div>
+
+     <!-- Menu navigasi -->
     <ul class="nav-links" id="nav-links">
       <li><a href="#beranda">Beranda</a></li>
       <li><a href="#tentang">Tentang Kami</a></li>
@@ -96,39 +101,48 @@
     </div>
 
     <!-- Konten grid -->
-   <div class="konten-item puisi", data-category="puisi">
-  <div class="card-glass">
-    <img src="image/puisi.jpg" alt="Puisi Literasi" />
-    <div class="card-bottom">
-      <div>
-        <h3>Puisi Literasi</h3>
-        <p>Karya sastra yang menggugah semangat generasi muda.</p>
-      </div>
-      <a href="file/puisi.pdf" download class="btn-unduh">👁️ Lihat</a>
-    </div>
-  </div>
-</div>
-
-      <div class="konten-item artikel", data-category="artikel">
+    <div class="konten-grid">
+      
+      <!-- Kartu 1 -->
+      <div class="konten-item puisi" data-category="puisi">
         <div class="card-glass">
-          <img src="image/buletin_sekolah.jpg" alt="Buletin Sekolah">
-          <h3>Buletin Sekolah</h3>
-          <p>Informasi mingguan seputar kegiatan dan opini siswa.</p>
-          <a href="file/buletin.pdf" download class="btn-unduh">👁️Lihat</a>
+          <img src="image/puisi.jpg" alt="Puisi Literasi" />
+          <div class="card-bottom">
+            <h3>Puisi Literasi</h3>
+            <p>Karya sastra yang menggugah semangat generasi muda.</p>
+            <a href="file/puisi.pdf" download class="btn-unduh">👁️ Lihat</a>
+          </div>
         </div>
       </div>
 
-      <div class="konten-item poster", data-category="konten">
+      <!-- Kartu 2 -->
+      <div class="konten-item artikel" data-category="artikel">
         <div class="card-glass">
-          <img src="image/kontent_digital.jpg" alt="Konten Digital">
-          <h3>Konten Digital</h3>
-          <p>Desain grafis, video reportase, hingga podcast siswa.</p>
-          <a href="file/konten.jpg" download class="btn-unduh">👁️Lihat</a>
+          <img src="image/buletin_sekolah.jpg" alt="Buletin Sekolah" />
+          <div class="card-bottom">
+            <h3>Buletin Sekolah</h3>
+            <p>Informasi mingguan seputar kegiatan dan opini siswa.</p>
+            <a href="file/buletin.pdf" download class="btn-unduh">👁️ Lihat</a>
+          </div>
         </div>
       </div>
-    </div>
+
+      <!-- Kartu 3 -->
+      <div class="konten-item konten" data-category="konten">
+        <div class="card-glass">
+          <img src="image/kontent_digital.jpg" alt="Konten Digital" />
+          <div class="card-bottom">
+            <h3>Konten Digital</h3>
+            <p>Desain grafis, video reportase, hingga podcast siswa.</p>
+            <a href="file/konten.pdf" download class="btn-unduh">👁️ Lihat</a>
+          </div>
+        </div>
+      </div>
+
+    </div> <!-- End konten-grid -->
   </div>
 </section>
+
 
 
 
@@ -160,7 +174,7 @@
 </section>
 
   <!-- 🔰 Bagian Divisi -->
-  <section class="divisi-section">
+  <section id="divisi", class="divisi">
     <h2>Divisi Jurnalistik</h2>
     <div class="divisi-container">
 
@@ -200,7 +214,7 @@
   </div>
 
 <!-- 📞 Footer -->
-<div class="kontak-footer">
+<div class="kontak-footer", id="kontak">
   <div class="kontak-container">
     <div class="kontak-deskripsi">
       <h2>Hubungi Kami</h2>
@@ -214,9 +228,9 @@
   </div>
   <div class="footer-bottom">
     &copy; 2025 Jurnalistik SMKN 1 Purwakarta. All Rights Reserved.
-  </div>
-  
+  </div>  
 </div>
+
 
 
 
@@ -239,11 +253,22 @@
       loadingScreen.style.opacity = "0";
       setTimeout(() => {
         loadingScreen.style.display = "none";
-      }, 500); // menunggu efek fade
-    }, 2000); // tampil selama 7 detik
+      }, 500); 
+    }, 4000); 
   });
 
-  <!-- 🧠 Divisi animasi -->
+
+  const hamburger = document.querySelector('.hamburger');
+  const navLinks = document.querySelector('.nav-links');
+  const mainContent = document.querySelector('main');
+
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
+    mainContent.classList.toggle('show');
+  });
+
+
+<!-- 🧠 Divisi animasi -->
     const descriptions = {
       penulis: {
         title: "✍️Divisi Penulis",
