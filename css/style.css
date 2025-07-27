@@ -463,145 +463,6 @@ section, .pengurus {
 }
 
 /* ========== Divisi Section ========== */
-/* ========== Divisi Section ========== */
-.divisi-section {
-  background-color: #000000;
-  text-align: center;
-  padding: 80px 20px;
-}
-
-.divisi-section h2 {
-  font-size: 42px;
-  margin-bottom: 40px;
-  color: #00ff73;
-  font-weight: bold;
-}
-
-/* Container for the Cards */
-.divisi-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
-}
-
-/* Individual Card */
-.divisi-card {
-  background-color: #1b1b1b;
-  border: 2px solid #a5d6a7;
-  border-radius: 12px;
-  width: 260px;
-  padding: 20px;
-  color: #ffffff;
-  text-align: left;
-  cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 0 10px #004d40;
-}
-
-.divisi-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 0 15px #00ff73;
-}
-
-.divisi-card img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 8px;
-  margin-bottom: 15px;
-}
-
-.divisi-card h3 {
-  font-size: 20px;
-  color: #a5d6a7;
-  margin-bottom: 10px;
-}
-
-.divisi-card p {
-  font-size: 14px;
-  color: #ffffff;
-}
-
-/* ========== Modal Styles ========== */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 9999;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.6);
-}
-
-.modal-content {
-  background-color: #1b1b1b;
-  margin: 10% auto;
-  padding: 30px;
-  border: 2px solid #a5d6a7;
-  width: 90%;
-  max-width: 500px;
-  border-radius: 12px;
-  color: white;
-  box-shadow: 0 0 20px #00ff73;
-  position: relative;
-  animation: fadeIn 0.4s ease-in-out;
-}
-
-@keyframes fadeIn {
-  from {
-    transform: translateY(-20px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-.modal-content h3 {
-  color: #a5d6a7;
-  margin-bottom: 15px;
-}
-
-.modal-content p {
-  font-size: 15px;
-  line-height: 1.6;
-}
-
-.close {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  color: #a5d6a7;
-  font-size: 28px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.3s ease;
-}
-
-.close:hover {
-  color: #ffffff;
-}
-
-/* ========== Responsive Design ========== */
-@media (max-width: 768px) {
-  .divisi-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .divisi-card {
-    width: 90%;
-  }
-
-  .modal-content {
-    margin-top: 30%;
-  }
-}
-/* ========== Divisi Section ========== */
 .divisi-section {
   background-color: #000000;
   text-align: center;
@@ -615,142 +476,16 @@ section, .pengurus {
   font-weight: bold;
 }
 
+.divisi-card-link {
+  text-decoration: none;
+}
+
 /* Container for the Cards */
 .divisi h2 {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 30px;
-}
-
-/* Individual Card */
-.divisi-card {
-  background-color: #1b1b1b;
-  border: 2px solid #a5d6a7;
-  border-radius: 12px;
-  width: 260px;
-  padding: 20px;
-  color: #ffffff;
-  text-align: left;
-  cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 0 10px #004d40;
-}
-
-.divisi-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 0 15px #00ff73;
-}
-
-.divisi-card img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 8px;
-  margin-bottom: 15px;
-}
-
-.divisi-card h3 {
-  font-size: 20px;
-  color: #a5d6a7;
-  margin-bottom: 10px;
-}
-
-.divisi-card p {
-  font-size: 14px;
-  color: #ffffff;
-}
-
-/* ========== Modal Styles ========== */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 9999;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.6);
-}
-
-.modal-content {
-  background-color: #1b1b1b;
-  margin: 10% auto;
-  padding: 30px;
-  border: 2px solid #a5d6a7;
-  width: 90%;
-  max-width: 500px;
-  border-radius: 12px;
-  color: white;
-  box-shadow: 0 0 20px #00ff73;
-  position: relative;
-  animation: fadeIn 0.4s ease-in-out;
-}
-
-@keyframes fadeIn {
-  from {
-    transform: translateY(-20px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-.modal-content h3 {
-  color: #a5d6a7;
-  margin-bottom: 15px;
-}
-
-.modal-content p {
-  font-size: 15px;
-  line-height: 1.6;
-}
-
-.close {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  color: #a5d6a7;
-  font-size: 28px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.3s ease;
-}
-
-.close:hover {
-  color: #ffffff;
-}
-
-/* ========== Responsive Design ========== */
-@media (max-width: 768px) {
-  .divisi-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .divisi-card {
-    width: 90%;
-  }
-
-  .modal-content {
-    margin-top: 30%;
-  }
-}
-/* ========== Divisi Section ========== */
-.divisi-section {
-  background-color: #000000;
-  text-align: center;
-  padding: 80px 20px;
-}
-
-.divisi-section h2 {
-  font-size: 42px;
-  margin-bottom: 40px;
-  color: #00ff73;
-  font-weight: bold;
 }
 
 /* Container for the Cards */
@@ -761,23 +496,11 @@ section, .pengurus {
   gap: 30px;
 }
 
-/* Individual Card */
-.divisi-card {
-  background-color: #1b1b1b;
-  border: 2px solid #a5d6a7;
-  border-radius: 12px;
-  width: 260px;
-  padding: 20px;
-  color: #ffffff;
-  text-align: left;
-  cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 0 10px #004d40;
-}
+
 
 .divisi-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 0 15px #00ff73;
+  box-shadow: 0 0 17px #00ff73;
 }
 
 .divisi-card img {
@@ -799,68 +522,6 @@ section, .pengurus {
   color: #ffffff;
 }
 
-/* ========== Modal Styles ========== */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 9999;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.6);
-}
-
-.modal-content {
-  background-color: #1b1b1b;
-  margin: 10% auto;
-  padding: 30px;
-  border: 2px solid #a5d6a7;
-  width: 90%;
-  max-width: 500px;
-  border-radius: 12px;
-  color: white;
-  box-shadow: 0 0 20px #00ff73;
-  position: relative;
-  animation: fadeIn 0.4s ease-in-out;
-}
-
-@keyframes fadeIn {
-  from {
-    transform: translateY(-20px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-.modal-content h3 {
-  color: #a5d6a7;
-  margin-bottom: 15px;
-}
-
-.modal-content p {
-  font-size: 15px;
-  line-height: 1.6;
-}
-
-.close {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  color: #a5d6a7;
-  font-size: 28px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.3s ease;
-}
-
-.close:hover {
-  color: #ffffff;
-}
 
 /* ========== Responsive Design ========== */
 @media (max-width: 768px) {
@@ -877,6 +538,29 @@ section, .pengurus {
     margin-top: 30%;
   }
 }
+
+
+/* Individual Card */
+.divisi-card {
+  background-color: #1b1b1b;
+  border: 2px solid #a5d6a7;
+  border-radius: 12px;
+  width: 260px;
+  padding: 20px;
+  color: #ffffff;
+  text-align: left;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 10px #004d40;
+}
+
+
+
+
+
+
+
+
 
 /*==== Footer ====*/
 
