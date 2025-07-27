@@ -173,45 +173,63 @@
   </div>
 </section>
 
-  <!-- 🔰 Bagian Divisi -->
-  <section id="divisi", class="divisi">
-    <h2>Divisi Jurnalistik</h2>
-    <div class="divisi-container">
+<!-- 🔰 Bagian Divisi -->
+<section id="divisi" class="divisi">
+  <h2>Divisi Jurnalistik</h2>
+  <div class="divisi-container">
 
-      <!-- Card 1 -->
-      <div class="divisi-card" onclick="showModal('penulis')">
+    <!-- Card 1: Penulis -->
+    <a href="divisi/penulis.html" class="divisi-card-link">
+      <div class="divisi-card">
         <img src="image/divisi_penulis.jpg" alt="Divisi Penulis">
         <h3>Divisi Penulis</h3>
+        <div class="card-divisi">
+          <div class="card-content">
+          </div>
+        </div>
       </div>
+    </a>
 
-      <!-- Card 2 -->
-      <div class="divisi-card" onclick="showModal('desain')">
-        <img src="image/divisi_desing.jpg" alt="Desain & Sosmed">
-        <h3>Desain & Sosmed</h3>
-      </div>
-
-      <!-- Card 3 -->
-      <div class="divisi-card" onclick="showModal('liputan')">
+    <!-- Card 2: Liputan -->
+    <a href="divisi/liputan.html" class="divisi-card-link">
+      <div class="divisi-card">
         <img src="image/divisi_liputan.jpg" alt="Divisi Liputan">
         <h3>Divisi Liputan</h3>
+        <div class="card-divisi">
+          <div class="card-content">
+          </div>
+        </div>
       </div>
+    </a>
 
-      <!-- Card 4 -->
-      <div class="divisi-card" onclick="showModal('editing')">
+    <!-- Card 3: Design & Sosmed -->
+    <a href="divisi/design.html" class="divisi-card-link">
+      <div class="divisi-card">
+        <img src="image/divisi_desing.jpg" alt="Divisi Design & Sosmed">
+        <h3>Divisi Design & Sosmed</h3>
+        <div class="card-divisi">
+          <div class="card-content">
+          </div>
+        </div>
+      </div>
+    </a>
+
+    <!-- Card 4: Editing -->
+    <a href="divisi/editing.html" class="divisi-card-link">
+      <div class="divisi-card">
         <img src="image/divisi_editing.jpg" alt="Divisi Editing">
         <h3>Divisi Editing</h3>
+        <div class="card-divisi">
+          <div class="card-content">
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
+    </a>
 
-  <!-- 🧾 Modal Penjelasan Divisi -->
-  <div id="modal" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal()">&times;</span>
-      <h3 id="modal-title"></h3>
-      <p id="modal-desc"></p>
-    </div>
   </div>
+</section>
+
+
 
 <!-- 📞 Footer -->
 <div class="kontak-footer", id="kontak">
@@ -254,7 +272,7 @@
       setTimeout(() => {
         loadingScreen.style.display = "none";
       }, 500); 
-    }, 4000); 
+    }, 200); 
   });
 
 
@@ -266,55 +284,6 @@
     navLinks.classList.toggle('show');
     mainContent.classList.toggle('show');
   });
-
-
-<!-- 🧠 Divisi animasi -->
-    const descriptions = {
-      penulis: {
-        title: "✍️Divisi Penulis",
-        desc: "Divisi Penulis ini bertugas membuat artikel, berita, puisi, dan naskah konten jurnalistik lainnya yang akan dipublikasikan baik di media internal maupun eksternal sekolah,  Divisi ini cocok banget buat kamu yang suka menulis, senang menuangkan ide ke dalam kata-kata, dan punya rasa ingin tahu yang tinggi. Nggak harus jago dulu kok, yang penting mau belajar dan konsisten!"
-      },
-      desain: {
-        title: "👩‍🎨Divisi Desain & Sosmed",
-        desc: "Divisi Desain dan Sosial Media adalah tim kreatif di balik tampilan visual dan keaktifan media sosial kami. Di bagian desain, kami membuat berbagai konten visual menarik seperti poster, logo, dan layout majalah yang estetik dan informatif. Sementara itu, divisi sosial media bertugas mengelola akun media sosial, membuat caption yang engaging, serta menjaga interaksi dengan followers. Cocok banget buat kamu yang suka dunia kreatif, desain grafis, dan aktif di dunia digital!"
-      },
-      liputan: {
-        title: "🧑‍💼Divisi Liputan",
-        desc: "Bertugas meliput kegiatan sekolah sebagai reporter, fotografer, dan videografer. Mereka menangkap momen penting untuk dokumentasi."
-      },
-      editing: {
-        title: "🧑‍💻Divisi Editing",
-        desc: "Divisi ini mengedit konten seperti video, foto, dan artikel sebelum dipublikasikan untuk memastikan kualitas dan konsistensi,  Divisi ini cocok buat kamu yang detail, teliti, dan punya rasa puas saat melihat hasil akhir yang sempurna!"
-      }
-    };
-
-    function showModal(divisi) {
-      document.getElementById('modal-title').innerText = descriptions[divisi].title;
-      document.getElementById('modal-desc').innerText = descriptions[divisi].desc;
-      document.getElementById('modal').style.display = 'block';
-    }
-
-    function closeModal() {
-      document.getElementById('modal').style.display = 'none';
-    }
-
-    // Tutup modal jika klik luar
-    window.onclick = function(event) {
-      const modal = document.getElementById('modal');
-      if (event.target == modal) {
-        modal.style.display = "none";
-      }
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
-      }
-    });
-  });
-
-  document.querySelectorAll(".fade-in").forEach((el) => observer.observe(el));
 
 
   const filterButtons = document.querySelectorAll('.filter-btn');
