@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Divisi Penulis</title>
+  <link rel="stylesheet" href="../styles.css" />
+  <style>
+    .penulis-section {
+      padding: 4rem 2rem;
+      text-align: center;
+      background: #ffffff;
+    }
+
+    .penulis-section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: #0eb467;
+    }
+
+    .penulis-section p {
+      max-width: 600px;
+      margin: 0 auto 2rem;
+      color: #555;
+      font-size: 1.1rem;
+    }
+
+    .member-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem 0;
+}
+
+.member-card {
+  background-color: #ffffff;
+  padding: 1.2rem;
+  border-radius: 1.5rem;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.member-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(14, 180, 103, 0.4); /* efek cahaya hijau */
+}
+
+.member-card img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%; /* bulat */
+  margin-bottom: 0.8rem;
+  border: 3px solid #0eb467;
+}
+
+.member-card h4 {
+  margin: 0.5rem 0 0.2rem;
+  font-size: 1.1rem;
+  color: #0eb467;
+}
+
+.member-card span {
+  display: block;
+  font-weight: 600;
+  color: #555;
+}
+
+.member-card p {
+  font-size: 0.9rem;
+  color: #444;
+  margin-top: 0.5rem;
+}
+
+  </style>
+</head>
+<body>
+
+  <section class="penulis-section">
+    <h2>Divisi Liputan</h2>
+    <p>Divisi Liputan adalah tim yang bertugas mengumpulkan informasi langsung dari lapangan. Mereka menjadi "mata dan telinga" dari sebuah berita. Divisi ini menangani proses peliputan mulai dari wawancara, observasi, dokumentasi, hingga pencatatan fakta yang dibutuhkan untuk membuat sebuah berita atau laporan.</p>
+
+<section class="divisi-member">
+  <h2>Anggota Divisi Liputan</h2>
+  <div class="member-container">
+    <!-- Member 1 -->
+      <div class="member-card">
+      <img src="/image2/wajah_nandika.jpeg" alt="Foto Alya Nurhaliza" />
+      <h4>Nandika Dewa Pratama</h4>
+      <span>REPORTER</span>
+      <p>Nandhika adalah seorang reporter yang  Bertugas mencari informasi, melakukan wawancara, dan melaporkan peristiwa untuk dijadikan bahan berita.</p>
+      </div>
+
+    <!-- Member 2 -->
+    <div class="member-card">
+      <img src="/image2/wajah_ilyas.jpeg" alt="Foto Fahri Rizky" />
+      <h4>Ilyas Saputra</h4>
+      <span>REPORTER</span>
+      <p>Ilyas merupakan bagian dari tim Liputan berita bagian Repoerter dalam eskul jurnalistik,Bertanggung jawab yang turun langsung mewawancarai dan mengumpulkan info.</p>
+    </div>
+
+    <!-- Member 3 -->
+    <div class="member-card">
+      <img src="/image2/wajah_bintang.jpeg" alt="Foto Siti Aminah" />
+      <h4>Muhammad Bintang Paradisa</h4>
+      <span>FOTOGRAFER</span>
+      <p>Bintang merupakan bagian dari tim Liputan berita bagian Fotografi dalam eskul jurnalistik,Bertanggung jawab mengambil gambar yang mendukung isi berita serta mendokumentasikan momen penting dari setiap kegiatan.</p>
+    </div>
+
+</section>
+
+
+</body>
+</html>

@@ -9,21 +9,28 @@
   <style>
     /* Preloader Styles */
     #preloader {
-      position: fixed;
-      width: 100vw;
-      height: 100vh;
-      background-color: #000; /* Bisa kamu ubah */
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 9999;
-      transition: opacity 0.5s ease;
-    }
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease;
+  }
 
-    #preloader img {
-      width: 180px; /* Atur ukuran loading GIF */
-      height: auto;
-    }
+  #preloader.hidden {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  #preloader img {
+    width: 180px;
+    height: auto;
+  }
   </style>
 </head>
 <body>
@@ -37,13 +44,11 @@
 <header>
   <nav class="navbar">
     <div class="nav-left">
-      <div class="logo">Jurnalistik Nepoer</div>
-      <div class="hamburger" id="hamburger">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-      </div>
+      <div class="logo">JURNALISTIK MEDIA</div>
+       <div class="hamburger" onclick="toggleMenu()">☰</div>
     </div>
+
+     <!-- Menu navigasi -->
     <ul class="nav-links" id="nav-links">
       <li><a href="#beranda">Beranda</a></li>
       <li><a href="#tentang">Tentang Kami</a></li>
@@ -60,10 +65,28 @@
   <div class="hero">
     <img src="image/logo_jurnalistik.png" alt="Logo Jurnalistik" width="120" />
     <h2>Jurnalis Muda, Suara Masa Depan</h2>
-  <button onclick="window.location.href='#karya'">Baca Karya Kami</button>
-  <button onclick="window.open('https://chat.whatsapp.com/K2Qw0i46n47Et977tKSz0O', '_blank')">Gabung Sekarang</button>
+  <button onclick="window.location.href='#karya-konten'">Baca Karya Kami</button>
+  <button onclick="window.open('https://whatsapp.com/channel/0029VanX3iR3GJOzzn3WyN2h', '_blank')">Gabung Sekarang</button>
   </div>
 </section>
+
+<section class="stats-section">
+  <div class="stats-container">
+    <div class="stat-card">
+      <h2 class="counter" data-target="">13</h2>
+      <p>Jumlah Member</p>
+    </div>
+    <div class="stat-card">
+      <h2 class="counter" data-target="25">0</h2>
+      <p>Kolaborasi</p>
+    </div>
+    <div class="stat-card">
+      <h2 class="counter" data-target="87">4</h2>
+      <p>Jumlah Karya</p>
+    </div>
+  </div>
+</section>
+
 
 <!-- 🧾 Tentang Kami -->
 <section class="tentang-kami" id="tentang">
@@ -74,10 +97,8 @@
         <img src="image/tentang_kami.jpg" alt="Tentang Kami" />
       </div>
       <div class="deskripsi">
-        <p>Kami adalah tim jurnalistik sekolah yang belajar dan berkarya seperti wartawan. Kami menulis berita, artikel, dan laporan, serta membuat konten visual seperti poster dan buletin digital,
-          Kami percaya bahwa informasi yang jelas dan menarik bisa membawa pengaruh baik. Karena itu, kami terus belajar menjadi jurnalis muda yang bertanggung jawab dan kreatif, seperti di dunia media dan berita.
-        </p>
-        <p>Kami adalah calon jurnalis muda yang siap menyuarakan berita dan cerita dari sekolah. Lewat tulisan dan desain, kami belajar seperti wartawan di media profesional.</p>
+        <p>Halo! Kami adalah tim jurnalistik yang punya semangat besar di dunia teknologi dan desain. Kami percaya bahwa setiap ide hebat bisa jadi kenyataan kalau ada inovasi dan kerja sama yang baik. Dengan pengalaman yang kami punya dan semangat untuk terus belajar, kami siap membantu mewujudkan ide-ide kreatif kamu jadi sesuatu yang nyata dan bermanfaat</p>
+        <p>Dengan pengalaman dan semangat kami, kami siap membantu Anda mewujudkan ide menjadi kenyataan.</p>
       </div>
     </div>
   </div>
@@ -87,23 +108,95 @@
 <section id="karya-konten" class="karya-konten">
   <div class="container">
     <h2>Karya dan Konten</h2>
-    <div class="konten-grid">
-      <div class="konten-item">
-        <img src="image/puisi.jpg" alt="Karya 1">
-        <h3>Puisi Literasi</h3>
-        <p>Karya sastra yang menggugah semangat generasi muda.</p>
-      </div>
-      <div class="konten-item">
-        <img src="image/buletin_sekolah.jpg" alt="Karya 2">
-        <h3>Buletin Sekolah</h3>
-        <p>Informasi mingguan seputar kegiatan dan opini siswa.</p>
-      </div>
-      <div class="konten-item">
-        <img src="image/kontent_digital.jpg" alt="Karya 3">
-        <h3>Konten Digital</h3>
-        <p>Desain grafis, video reportase, hingga podcast siswa.</p>
-      </div>
+
+    <!-- Tombol filter -->
+    <div class="filter-buttons">
+      <button class="filter-btn active" data-category="all">All</button>
+      <button class="filter-btn" data-category="puisi">Puisi</button>
+      <button class="filter-btn" data-category="artikel">Artikel</button>
+      <button class="filter-btn" data-category="konten">Fotografi</button>
     </div>
+
+    <!-- Modal Zoom Image -->
+<div id="imageModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="zoomedImg">
+</div>
+
+
+    <!-- Konten grid -->
+    <div class="konten-grid">
+      
+      <!-- Kartu 1 -->
+      <div class="konten-item puisi" data-category="puisi">
+        <div class="card-glass">
+          <img src="image/puisi.jpg" alt="Puisi Literasi" />
+          <div class="card-bottom">
+            <h3>Puisi Literasi</h3>
+            <p>Karya sastra yang menggugah semangat generasi muda.</p>
+            <a href="file/puisi.pdf" download class="btn-unduh">👁️ Lihat</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Kartu 2 -->
+      <div class="konten-item artikel" data-category="artikel">
+        <div class="card-glass">
+          <img src="image/artikel.png" alt="Buletin Sekolah" />
+          <div class="card-bottom">
+            <h3>Buletin Sekolah</h3>
+            <p>Informasi mingguan seputar kegiatan dan opini siswa.</p>
+            <a href="file/buletin.pdf" download class="btn-unduh">👁️ Lihat</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Kartu 3 -->
+      <div class="konten-item konten" data-category="konten">
+        <div class="card-glass">
+          <img src="image/foto_bintang_1.jpg" alt="Konten Digital" />
+          <div class="card-bottom">
+            <h3>Fotografi</h3>
+            <p>Karya oleh : Muhammad Bintang Paradisa</p>
+            <a href="file/konten.pdf" download class="btn-unduh">👁️ Lihat</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="konten-item konten" data-category="konten">
+        <div class="card-glass">
+          <img src="image/foto_bintang_2.jpg" alt="Konten Digital" />
+          <div class="card-bottom">
+            <h3>Fotografi</h3>
+            <p>Karya oleh : Muhammad Bintang Paradisa</p>
+            <a href="file/konten.pdf" download class="btn-unduh">👁️ Lihat</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="konten-item konten" data-category="konten">
+        <div class="card-glass">
+          <img src="image/foto_bintang_3.jpg" alt="Konten Digital" />
+          <div class="card-bottom">
+            <h3>Fotografi</h3>
+            <p>Karya oleh : Muhammad Bintang Paradisa</p>
+            <a href="file/konten.pdf" download class="btn-unduh">👁️ Lihat</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="konten-item konten" data-category="konten">
+        <div class="card-glass">
+          <img src="image/foto_bintang_4.jpg" alt="Konten Digital" />
+          <div class="card-bottom">
+            <h3>Fotografi</h3>
+            <p>Karya oleh : Muhammad Bintang Paradisa</p>
+            <a href="file/konten.pdf" download class="btn-unduh">👁️ Lihat</a>
+          </div>
+        </div>
+      </div>
+
+    </div> <!-- End konten-grid -->
   </div>
 </section>
 
@@ -122,77 +215,91 @@
       <p>Ketua</p>
     </div>
     <div class="pengurus-item">
-      <img src="image/anymous_woman.jpg" alt="Sekretaris">
-      <h3>Belum ada</h3>
+      <img src="image/wajah_dava.jpeg" alt="Sekretaris">
+      <h3>Dava Putra Pratama</h3>
       <p>Wakil Ketua</p>
     </div>
     <div class="pengurus-item">
       <img src="image/anymous_man.jpg" alt="Bendahara">
       <h3>Belum ada</h3>
-      <p>Bendahara</p>
+      <p>Sekretaris</p>
     </div>
   </div>
 </section>
 
-  <!-- 🔰 Bagian Divisi -->
-  <section class="divisi-section">
-    <h2>Divisi Jurnalistik</h2>
-    <div class="divisi-container">
+<!-- 🔰 Bagian Divisi -->
+<section id="divisi" class="divisi">
+  <h2>Divisi Jurnalistik</h2>
+  <div class="divisi-container">
 
-      <!-- Card 1 -->
-      <div class="divisi-card" onclick="showModal('penulis')">
+    <!-- Card 1: Penulis -->
+    <a href="divisi/penulis.html" class="divisi-card-link">
+      <div class="divisi-card">
         <img src="image/divisi_penulis.jpg" alt="Divisi Penulis">
         <h3>Divisi Penulis</h3>
+        <div class="card-divisi">
+          <div class="card-content">
+          </div>
+        </div>
       </div>
+    </a>
 
-      <!-- Card 2 -->
-      <div class="divisi-card" onclick="showModal('desain')">
-        <img src="image/divisi_editing.jpg" alt="Desain & Sosmed">
-        <h3>Desain & Sosmed</h3>
-      </div>
-
-      <!-- Card 3 -->
-      <div class="divisi-card" onclick="showModal('liputan')">
+    <!-- Card 2: Liputan -->
+    <a href="divisi/liputan.html" class="divisi-card-link">
+      <div class="divisi-card">
         <img src="image/divisi_liputan.jpg" alt="Divisi Liputan">
         <h3>Divisi Liputan</h3>
+        <div class="card-divisi">
+          <div class="card-content">
+          </div>
+        </div>
       </div>
+    </a>
 
-      <!-- Card 4 -->
-      <div class="divisi-card" onclick="showModal('editing')">
+    <!-- Card 3: Design & Sosmed -->
+    <a href="divisi/design.html" class="divisi-card-link">
+      <div class="divisi-card">
+        <img src="image/divisi_desing.jpg" alt="Divisi Design & Sosmed">
+        <h3>Divisi Design & Sosmed</h3>
+        <div class="card-divisi">
+          <div class="card-content">
+          </div>
+        </div>
+      </div>
+    </a>
+
+    <!-- Card 4: Editing -->
+    <a href="divisi/editing.html" class="divisi-card-link">
+      <div class="divisi-card">
         <img src="image/divisi_editing.jpg" alt="Divisi Editing">
         <h3>Divisi Editing</h3>
+        <div class="card-divisi">
+          <div class="card-content">
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
+    </a>
 
-  <!-- 🧾 Modal Penjelasan Divisi -->
-  <div id="modal" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal()">&times;</span>
-      <h3 id="modal-title"></h3>
-      <p id="modal-desc"></p>
-    </div>
   </div>
+</section>
 
 <!-- 📞 Footer -->
-<div class="kontak-footer">
+<div class="kontak-footer", id="kontak">
   <div class="kontak-container">
     <div class="kontak-deskripsi">
       <h2>Hubungi Kami</h2>
-      <p>Kami adalah tim jurnalistik yang siap menyampaikan informasi secara akurat dan inspiratif.</p>
+      <p>Kami adalah tim jurnalistik yang siap menyampaikan informasi secara akurat dan inspiratif, bagi kalian yang tertarik dengan dunia media langsung join dan hubungi nomor WA yang sudah tertera.</p>
     </div>
     <div class="kontak-info">
       <p>Email: <a href="mailto:info@jurnalistikschool.com">info@jurnalistikschool.com</a></p>
-      <p>Instagram: <a href="https://instagram.com/namakamu">@namakamu</a></p>
-      <p>WhatsApp: <a href="https://wa.me/6281234567890">+62 812-3456-7890</a></p>
+      <p>Instagram: <a href="https://instagram.com/namakamu">@jurnalistik.smkn1purwakarta_</a></p>
+      <p>WhatsApp: <a href="https://wa.me/6281234567890">+62 819-3143-7013</a></p>
     </div>
   </div>
   <div class="footer-bottom">
     &copy; 2025 Jurnalistik SMKN 1 Purwakarta. All Rights Reserved.
-  </div>
-  
+  </div>  
 </div>
-
 
 
 <!-- script lain seperti JavaScript kamu -->
@@ -214,50 +321,67 @@
       loadingScreen.style.opacity = "0";
       setTimeout(() => {
         loadingScreen.style.display = "none";
-      }, 500); // menunggu efek fade
-    }, 2000); // tampil selama 7 detik
+      }, 500); 
+    }, 2000); 
   });
 
-  <!-- 🧠 Divisi animasi -->
-    const descriptions = {
-      penulis: {
-        title: "✍️Divisi Penulis",
-        desc: "Divisi Penuli  ini bertugas membuat artikel, berita, puisi, dan naskah konten jurnalistik lainnya yang akan dipublikasikan baik di media internal maupun eksternal sekolah."
-      },
-      desain: {
-        title: "👩‍🎨Divisi Desain & Sosmed",
-        desc: "Mengatur konten visual seperti feed Instagram, poster, dan buletin digital. Mereka bertanggung jawab atas tampilan media sosial."
-      },
-      liputan: {
-        title: "🧑‍💼Divisi Liputan",
-        desc: "Bertugas meliput kegiatan sekolah sebagai reporter, fotografer, dan videografer. Mereka menangkap momen penting untuk dokumentasi."
-      },
-      editing: {
-        title: "🧑‍💻Divisi Editing",
-        desc: "Divisi ini mengedit konten seperti video, foto, dan artikel sebelum dipublikasikan untuk memastikan kualitas dan konsistensi."
-      }
-    };
 
-    function showModal(divisi) {
-      document.getElementById('modal-title').innerText = descriptions[divisi].title;
-      document.getElementById('modal-desc').innerText = descriptions[divisi].desc;
-      document.getElementById('modal').style.display = 'block';
+  const hamburger = document.querySelector('.hamburger');
+  const navLinks = document.querySelector('.nav-links');
+  const mainContent = document.querySelector('main');
+
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
+    mainContent.classList.toggle('show');
+  });
+
+
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const kontenItems = document.querySelectorAll('.konten-item');
+
+  filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      // Hapus kelas active dari semua tombol
+      filterButtons.forEach(btn => btn.classList.remove('active'));
+      button.classList.add('active');
+
+      const category = button.getAttribute('data-category');
+
+      kontenItems.forEach(item => {
+        if (category === 'all' || item.getAttribute('data-category') === category) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    });
+  });
+
+    const modal = document.getElementById("imageModal");
+  const modalImg = document.getElementById("zoomedImg");
+  const closeBtn = document.querySelector(".close");
+
+  // Tangkap semua gambar di dalam .konten-grid
+  document.querySelectorAll('.konten-grid img').forEach(img => {
+    img.addEventListener('click', () => {
+      modal.style.display = "block";
+      modalImg.src = img.src;
+      modalImg.alt = img.alt;
+    });
+  });
+
+  // Tombol tutup (x)
+  closeBtn.onclick = () => {
+    modal.style.display = "none";
+  }
+
+  // Klik di luar gambar juga menutup modal
+  window.onclick = (e) => {
+    if (e.target === modal) {
+      modal.style.display = "none";
     }
-
-    function closeModal() {
-      document.getElementById('modal').style.display = 'none';
-    }
-
-    // Tutup modal jika klik luar
-    window.onclick = function(event) {
-      const modal = document.getElementById('modal');
-      if (event.target == modal) {
-        modal.style.display = "none";
-      }
-    };
+  }
 
 </script>
-
 </body>
 </html>
-

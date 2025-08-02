@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Divisi Penulis</title>
+  <link rel="stylesheet" href="../styles.css" />
+  <style>
+    .penulis-section {
+      padding: 4rem 2rem;
+      text-align: center;
+      background: #ffffff;
+    }
+
+    .penulis-section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: #0eb467;
+    }
+
+    .penulis-section p {
+      max-width: 600px;
+      margin: 0 auto 2rem;
+      color: #555;
+      font-size: 1.1rem;
+    }
+
+    .member-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      padding-top: 2rem;
+    }
+
+    .member-card {
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      padding: 1.5rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .member-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0, 255, 150, 0.4);
+    }
+
+    .member-card img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 1rem;
+      border: 4px solid #0eb467;
+    }
+
+    .member-card h4 {
+      font-size: 1.2rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .member-card span {
+      font-size: 0.95rem;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+
+  <section class="penulis-section">
+    <h2>Divisi Desing & Sosmed</h2>
+    <p>Divisi Desain & Sosial Media adalah tim kreatif yang bertugas menyampaikan pesan jurnalistik melalui visual dan platform digital. Divisi ini menggabungkan kemampuan seni dan strategi digital untuk membuat konten yang menarik secara tampilan dan kuat secara pesan.</p>
+
+<section class="divisi-member">
+  <h2>Anggota Divisi Design & Sosmed</h2>
+  <div class="member-container">
+    <!-- Member 1 -->
+    <div class="member-card">
+      <img src="/image2/wajah_sity.jpeg" alt="Foto Alya Nurhaliza" />
+      <h4>Sity Nurkhasana</h4>
+      <span>MANAJEMEN SOSMED</span>
+      <p>Sity bertugas di divisi manajemen media sosial tim jurnalistik, dengan tanggung jawab mengelola seluruh akun resmi eskul di berbagai platform.</p>
+    </div>
+
+    <!-- Member 2 -->
+    <div class="member-card">
+      <img src="/image2/wajah_keizha.jpeg" alt="Foto Fahri Rizky" />
+      <h4>Keizha Tesalonika</h4>
+      <span>DESING</span>
+      <p>Keizha adalah anggota salah satu tim jurnalistik bagian Desing yang bertanggung jawab membikin/membuat tampilan desing yang menarik di lihat kepada tim divisi lain</p>
+    </div>
+
+    <!-- Member 3 -->
+    <div class="member-card">
+      <img src="/image2/wajah_naura.jpeg" alt="Foto Siti Aminah" />
+      <h4>Naura Azkia Nugraha </h4>
+      <span>DESING</span>
+      <p>Naura adalah anggota salah satu tim jurnalistik bagian Desing yang bertanggung jawab dalam aspek visual dan tampilan grafis Memastikan semua desain mengikuti identitas visual dan estetika jurnalistik.</p>
+    </div>
+  </section>
+</body>
+</html>
