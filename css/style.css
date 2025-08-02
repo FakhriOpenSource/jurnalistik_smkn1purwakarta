@@ -327,11 +327,7 @@ section, .tentang-kami {
   padding: 60px 20px;
   margin-top: 50px;
   background-color: #000;
-<<<<<<< HEAD
   color: #36df98;
-=======
-  color: #1dc981;
->>>>>>> aa8224d24cb86d6e5b66a681ed9514d256f66f32
   font-family: 'Segoe UI', sans-serif;
 }
 
@@ -377,17 +373,10 @@ section, .tentang-kami {
 
 /* Kartu individual */
 .konten-item {
-<<<<<<< HEAD
   background: #08a34e;
   border-radius: 20px;
   overflow: hidden;
   width: 310px;
-=======
-  background: #04853e;
-  border-radius: 20px;
-  overflow: hidden;
-  width: 300px;
->>>>>>> aa8224d24cb86d6e5b66a681ed9514d256f66f32
   max-width: 100%;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease;
@@ -403,11 +392,7 @@ section, .tentang-kami {
 /* Gambar kartu */
 .konten-item img {
   width: 100%;
-<<<<<<< HEAD
   height: 270px;
-=======
-  height: 250px;
->>>>>>> aa8224d24cb86d6e5b66a681ed9514d256f66f32
   object-fit: cover;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
@@ -450,7 +435,6 @@ section, .tentang-kami {
   background-color: #000;
 }
 
-<<<<<<< HEAD
 .modal {
   display: none; 
   position: fixed; 
@@ -492,8 +476,6 @@ section, .tentang-kami {
 }
 
 
-=======
->>>>>>> aa8224d24cb86d6e5b66a681ed9514d256f66f32
 /* Responsive mobile */
 @media (max-width: 768px) {
   .konten-grid {
