@@ -18,31 +18,6 @@ document.querySelectorAll('button').forEach(btn => {
   });
 });
 
-<<<<<<< HEAD
-
-=======
-// ✅ Hamburger menu untuk tampilan mobile
-const hamburger = document.getElementById("hamburger");
-const navLinks = document.getElementById("nav-links");
-
-if (hamburger && navLinks) {
-  const icon = hamburger.querySelector("i");
-
-  hamburger.addEventListener("click", () => {
-    navLinks.classList.toggle("active");
-
-    // Ganti ikon hamburger -> X dan sebaliknya
-    if (icon) {
-      if (navLinks.classList.contains("active")) {
-        icon.classList.replace("fa-bars", "fa-times");
-      } else {
-        icon.classList.replace("fa-times", "fa-bars");
-      }
-    }
-  });
-}
-
->>>>>>> aa8224d24cb86d6e5b66a681ed9514d256f66f32
 // Filter tombol logika
 const filterButtons = document.querySelectorAll('.filter-btn');
 const kontenItems = document.querySelectorAll('.konten-item');
@@ -74,7 +49,6 @@ window.addEventListener('DOMContentLoaded', () => {
   filterKonten('all');
 });
 
-<<<<<<< HEAD
 function openDetail() {
   const detailPage = document.getElementById("detailPage");
   if (detailPage) {
@@ -110,7 +84,6 @@ const counters = document.querySelectorAll('.counter');
 
     updateCount();
   });
-=======
->>>>>>> aa8224d24cb86d6e5b66a681ed9514d256f66f32
+
 
 
